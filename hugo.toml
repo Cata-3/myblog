@@ -1,9 +1,17 @@
 baseURL = "https://Cata-3.github.io/myblog/"
 title = "My Blog"
 theme = "PaperMod"
-languageCode = "en"
+locale = "en"
 enableEmoji = true
 hasCJKLanguage = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]'], ['$$', '$$']]
+    inline = [['\(', '\)']]
 
 [pagination]
   pagerSize = 10
@@ -12,7 +20,8 @@ hasCJKLanguage = true
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  mainSections = ["posts"]
+  mainSections = ["posts", "notes"]
+  ShowAllPagesInArchive = true
   subtitle = "My Blog"
   ShowReadingTime = true
   ShowCodeCopyButtons = true
@@ -21,7 +30,7 @@ hasCJKLanguage = true
 
   [params.homeInfoParams]
     Title = "Hi there 👋"
-    Content = "Welcome to my blog. I write notes about what I'm learning."
+    Content = "Good morning, welcome to my blog."
 
 [[menu.main]]
   identifier = "home"
@@ -30,13 +39,25 @@ hasCJKLanguage = true
   weight = 1
 
 [[menu.main]]
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "note"
+  name = "Notes"
+  url = "/notes/"
+  weight = 3
+
+[[menu.main]]
   identifier = "archives"
   name = "Archives"
   url = "/archives/"
-  weight = 2
+  weight = 4
 
 [[menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 3
+  weight = 5
