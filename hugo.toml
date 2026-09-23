@@ -1,0 +1,42 @@
+baseURL = "https://Cata-3.github.io/myblog/"
+title = "My Blog"
+theme = "PaperMod"
+languageCode = "en"
+enableEmoji = true
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  mainSections = ["posts"]
+  subtitle = "My Blog"
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  DateFormat = "2006-01-02"
+
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "Welcome to my blog. I write notes about what I'm learning."
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  url = "/archives/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 3
