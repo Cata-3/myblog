@@ -8,6 +8,12 @@
     {{- $scratch.Add "meta" (slice (.Date.Format "15:04")) }}
 {{- end }}
 
+{{- if .Lastmod -}}
+    {{- if ne .Lastmod .Date -}}
+        {{- $scratch.Add "meta" (slice (printf "updated %s" (.Lastmod.Format "2006-01-02 15:04"))) }}
+    {{- end }}
+{{- end }}
+
 {{- if (.Param "ShowWordCount") -}}
     {{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
 {{- end }}
