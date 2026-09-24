@@ -4,6 +4,7 @@ theme = "PaperMod"
 locale = "en"
 enableEmoji = true
 hasCJKLanguage = true
+enableGitInfo = true
 
 [markup.goldmark.renderer]
   unsafe = true
