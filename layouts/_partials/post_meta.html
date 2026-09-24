@@ -1,11 +1,19 @@
 {{- $scratch := newScratch }}
 
-{{- if not .Date.IsZero -}}
-    {{- $scratch.Add "meta" (slice (.Date | time.Format (default ":date_long" site.Params.DateFormat))) }}
+{{- $publishDate := .Date -}}
+{{- with .GitInfo -}}
+    {{- $publishDate = .CommitDate -}}
+    {{- range .Ancestors -}}
+        {{- $publishDate = .CommitDate -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if not $publishDate.IsZero -}}
+    {{- $scratch.Add "meta" (slice ($publishDate | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-    {{- $scratch.Add "meta" (slice (.Date.Format "15:04")) }}
+    {{- $scratch.Add "meta" (slice ($publishDate.Format "15:04")) }}
 {{- end }}
 
 {{- if .Lastmod -}}
