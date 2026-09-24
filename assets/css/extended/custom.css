@@ -1,0 +1,32 @@
+.post-history {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.post-history summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.post-history-list {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+}
+
+.post-history-list li {
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+
+.post-history-subject {
+    margin-left: 0.5rem;
+}
+
+.post-history a {
+    color: var(--secondary);
+    font-size: 0.8rem;
+}

@@ -1,0 +1,29 @@
+{{- with .GitInfo }}
+<details class="post-history">
+    <summary>Update History ({{ add (len .Ancestors) 1 }})</summary>
+    <ul class="post-history-list">
+        <li>
+            <time datetime="{{ .CommitDate.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .CommitDate.Format "2006-01-02 15:04" }}
+            </time>
+            <span class="post-history-subject">{{ .Subject }}</span>
+            {{- if $.Site.Params.githubRepo }}
+            <a href="{{ $.Site.Params.githubRepo }}/commit/{{ .Hash }}"
+               target="_blank" rel="noopener">({{ .AbbreviatedHash }})</a>
+            {{- end }}
+        </li>
+        {{- range .Ancestors.Reverse }}
+        <li>
+            <time datetime="{{ .CommitDate.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .CommitDate.Format "2006-01-02 15:04" }}
+            </time>
+            <span class="post-history-subject">{{ .Subject }}</span>
+            {{- if $.Site.Params.githubRepo }}
+            <a href="{{ $.Site.Params.githubRepo }}/commit/{{ .Hash }}"
+               target="_blank" rel="noopener">({{ .AbbreviatedHash }})</a>
+            {{- end }}
+        </li>
+        {{- end }}
+    </ul>
+</details>
+{{- end }}

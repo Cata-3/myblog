@@ -27,6 +27,8 @@ enableGitInfo = true
   ShowReadingTime = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  ShowViews = true
+  githubRepo = "https://github.com/Cata-3/myblog"
   DateFormat = "2006-01-02"
 
   [params.homeInfoParams]

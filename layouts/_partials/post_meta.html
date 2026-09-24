@@ -32,6 +32,10 @@
     {{- end }}
 {{- end }}
 
+{{- if .Param "ShowViews" -}}
+    {{- $scratch.Add "meta" (slice (partial "post_views.html" .)) }}
+{{- end }}
+
 {{- with ($scratch.Get "meta") }}
     {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
 {{- end -}}
