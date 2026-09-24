@@ -64,3 +64,6 @@ enableGitInfo = true
   name = "Search"
   url = "/search/"
   weight = 5
+[frontmatter]
+  lastmod = [':git', 'lastmod', 'date']
+  date = ['date', ':git', 'publishDate']
