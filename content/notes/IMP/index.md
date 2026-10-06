@@ -1,5 +1,5 @@
 +++
-title = "Modern Physics Notes"
+title = "Introduction to Mathematics and Physics Notes"
 draft = false
 date = 2026-10-01
 +++
