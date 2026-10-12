@@ -1,0 +1,9 @@
+{{- $pdf := .Get 0 -}}
+{{- $pdfURL := printf "%s%s" .Page.RelPermalink $pdf -}}
+<iframe
+  src="{{ "pdfjs/web/viewer.html" | relURL }}?file={{ $pdfURL }}"
+  width="100%"
+  height="800px"
+  style="border:1px solid #ccc;"></iframe>
+
+<p><a href="{{ $pdf }}">📄 Download PDF</a></p>
