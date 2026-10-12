@@ -1,0 +1,86 @@
+{{- define "main" }}
+<article class="about-page">
+
+  <header class="about-header">
+    <img class="about-avatar" src="{{ "avatar.jpg" | relURL }}" alt="avatar">
+    <div class="about-intro">
+      <h1 class="about-name">catta.3</h1>
+      <p class="about-tagline">形而上学 不行不上</p>
+      <div class="about-social">
+        <a href="https://github.com/Cata-3" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:anguswangwang@163.com">Email</a>
+        <a href="mailto:3483354242@qq.com">QQ</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="about-content">
+    {{ .Content }}
+  </div>
+
+</article>
+
+<style>
+.about-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+.about-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+}
+.about-intro {
+  flex: 1;
+  min-width: 0;
+}
+.about-name {
+  margin: 0 0 0.4rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+.about-tagline {
+  color: var(--secondary);
+  margin: 0 0 0.8rem;
+}
+.about-social {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.about-social a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--secondary);
+}
+.about-social a:hover {
+  color: var(--theme);
+  border-bottom-color: var(--theme);
+}
+.about-content {
+  line-height: 1.8;
+}
+.about-content h2 {
+  margin-top: 2rem;
+}
+@media (max-width: 600px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-social {
+    justify-content: center;
+  }
+}
+</style>
+{{- end }}
