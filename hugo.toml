@@ -6,6 +6,10 @@ enableEmoji = true
 hasCJKLanguage = true
 enableGitInfo = true
 
+[security]
+  [security.exec]
+    allow = ['^git$']
+
 [markup.goldmark.renderer]
   unsafe = true
 [markup.goldmark.extensions.passthrough]
@@ -74,3 +78,5 @@ enableGitInfo = true
 [frontmatter]
   lastmod = [':git', 'lastmod', 'date']
   date = ['date', ':git', 'publishDate']
+
+
