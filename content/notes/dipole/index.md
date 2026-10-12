@@ -1,5 +1,5 @@
 ---
-title: "dipole"
+title: "Dipole"
 date: 2026-10-09
 draft: false
 ---
@@ -7,4 +7,4 @@ draft: false
 
 <iframe src="w.pdf" width="100%" height="800px" style="border:1px solid #ccc;"></iframe>
 
-[下载 PDF](w.pdf)
+[Donload PDF](w.pdf)
