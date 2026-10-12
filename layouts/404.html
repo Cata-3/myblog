@@ -1,0 +1,57 @@
+{{- define "main" }}
+<div class="not-found">
+  <div class="not-found-inner">
+    <h1>404</h1>
+    <p>这个页面不见了 / Page not found</p>
+    <a href="{{ site.Home.RelPermalink }}" class="back-home">← 回首页 / Back to Home</a>
+  </div>
+</div>
+
+<style>
+.not-found {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 80vh;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+.not-found-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.not-found h1 {
+  font-size: 6rem;
+  margin: 0;
+  line-height: 1;
+  color: var(--primary);
+}
+.not-found p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin: 1.2rem 0 1.5rem;
+}
+.not-found a.back-home {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s;
+}
+.not-found a.back-home:hover {
+  color: var(--theme);
+  border-bottom-color: var(--theme);
+}
+
+.main:has(.not-found),
+main:has(.not-found) {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+{{- end }}
