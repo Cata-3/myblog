@@ -32,6 +32,7 @@ enableGitInfo = true
   ShowCodeCopyButtons = true
   ShowToc = true
   ShowViews = true
+  comments = true
   githubRepo = "https://github.com/Cata-3/myblog"
   DateFormat = "2006-01-02"
 
@@ -78,5 +79,3 @@ enableGitInfo = true
 [frontmatter]
   lastmod = [':git', 'lastmod', 'date']
   date = ['date', ':git', 'publishDate']
-
-
