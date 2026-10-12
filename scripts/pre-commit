@@ -1,0 +1,42 @@
+#!/bin/bash
+stamp=$(date +"%Y-%m-%dT%H:%M:%S")
+changed=$(git diff --cached --name-only --diff-filter=ACMR)
+
+dirs=""
+for f in $changed; do
+    dir=$(dirname "$f")
+    idx="$dir/index.md"
+    if [ -f "$idx" ] && [ "$f" != "$idx" ]; then
+        case " $dirs " in
+            *" $dir "*) ;;
+            *) dirs="$dirs $dir" ;;
+        esac
+    fi
+done
+
+for dir in $dirs; do
+    idx="$dir/index.md"
+
+    if grep -qE '^updated[[:space:]]*=' "$idx"; then
+        sed -i '' -E "s|^updated[[:space:]]*=.*|updated = \"$stamp\"|" "$idx"
+    else
+        first=$(head -1 "$idx")
+        if [ "$first" = "+++" ]; then
+            awk -v s="$stamp" '
+                BEGIN { c=0 }
+                /^\+\+\+$/ { c++; if (c==2) { print "updated = \"" s "\"" } }
+                { print }
+            ' "$idx" > "$idx.tmp" && mv "$idx.tmp" "$idx"
+        elif [ "$first" = "---" ]; then
+            awk -v s="$stamp" '
+                BEGIN { c=0 }
+                /^---$/ { c++; if (c==2) { print "updated: \"" s "\"" } }
+                { print }
+            ' "$idx" > "$idx.tmp" && mv "$idx.tmp" "$idx"
+        fi
+    fi
+
+    git add "$idx"
+done
+
+exit 0
