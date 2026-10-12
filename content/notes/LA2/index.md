@@ -2,10 +2,10 @@
 title = "Linear Algebra 2 Notes"
 draft = false
 date = 2026-10-01
+updated = "2026-10-13T00:18:56"
 +++
 
 Linear Algebra 2 note.
 
-<iframe src="LA2.pdf" width="100%" height="800px" style="border:1px solid #ccc;"></iframe>
+{{< pdf "LA2.pdf" >}}
 
-[Download  PDF](LA2.pdf)
