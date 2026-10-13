@@ -4,13 +4,8 @@
   <header class="about-header">
     <img class="about-avatar" src="{{ "avatar.jpg" | relURL }}" alt="avatar">
     <div class="about-intro">
-      <h1 class="about-name">catta.3</h1>
-      <p class="about-tagline">形而上学 不行不上</p>
-      <div class="about-social">
-        <a href="https://github.com/Cata-3" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:anguswangwang@163.com">Email</a>
-        <a href="mailto:3483354242@qq.com">QQ</a>
-      </div>
+      <h1 class="about-name">Catta</h1>
+      <p class="about-tagline">UOE, Mathematical Physics</p>
     </div>
   </header>
 
@@ -22,64 +17,58 @@
 
 <style>
 .about-page {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 2rem 1rem 4rem;
+  font-family: "Iowan Old Style", Georgia, "Songti SC", "STSong", "STFangsong", serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .about-header {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
-  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 .about-avatar {
-  width: 140px;
-  height: 140px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--border);
   flex-shrink: 0;
 }
-.about-intro {
-  flex: 1;
-  min-width: 0;
-}
+.about-intro { flex: 1; min-width: 0; }
 .about-name {
-  margin: 0 0 0.4rem;
-  font-size: 1.8rem;
+  margin: 0 0 0.2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
 }
 .about-tagline {
   color: var(--secondary);
-  margin: 0 0 0.8rem;
-}
-.about-social {
-  display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
-.about-social a {
-  color: var(--primary);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--secondary);
-}
-.about-social a:hover {
-  color: var(--theme);
-  border-bottom-color: var(--theme);
-}
-.about-content {
-  line-height: 1.8;
+  margin: 0;
+  font-size: 0.95rem;
 }
 .about-content h2 {
-  margin-top: 2rem;
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.about-content p {
+  margin: 0.3rem 0;
+}
+.about-content a,
+.about-content a:visited {
+  color: #0366d6 !important;
+  text-decoration: underline !important;
+}
+.about-content a:hover {
+  color: #024a9e !important;
 }
 @media (max-width: 600px) {
   .about-header {
     flex-direction: column;
     text-align: center;
-  }
-  .about-social {
-    justify-content: center;
   }
 }
 </style>

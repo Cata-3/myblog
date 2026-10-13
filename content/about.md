@@ -5,15 +5,22 @@ url: "/about/"
 draft: false
 ---
 
-## 我是谁
+## Currently
 
-这里写你的介绍。
+最近在看高代和 QM.
 
-## 我在做什么
+## This blog
 
-- 学习 X
-- 折腾 Y
+笔记、随笔，以及一些乱七八糟的东西, 没什么规划.
 
-## 联系我
+## Else
 
-GitHub: [@Cata-3](https://github.com/Cata-3)
+动漫、音乐、读书、明日方舟：终末地.
+
+## Contact
+
+Email: anguswangwang@163.com
+
+QQ: 3483354242
+
+GitHub: [Cata-3](https://github.com/Cata-3)
