@@ -36,6 +36,12 @@ enableGitInfo = true
   githubRepo = "https://github.com/Cata-3/myblog"
   DateFormat = "2006-01-02"
 
+  [params.assets]
+    favicon = "/myblog/favicon-32x32.png"
+    favicon16x16 = "/myblog/favicon-16x16.png"
+    favicon32x32 = "/myblog/favicon-32x32.png"
+    apple_touch_icon = "/myblog/apple-touch-icon.png"
+
   [params.homeInfoParams]
     Title = "Hi there 👋"
     Content = "Good morning, welcome to my blog."
