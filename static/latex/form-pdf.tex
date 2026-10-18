@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e} 
+\usepackage{blkarray}
+\usepackage{nicematrix}
+\usepackage{extarrows}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tasks}
+\definecolor{mi}{HTML}{39C5BB}
+\settasks{
+  label-width = 1.5em,
+  item-indent = 2em,
+  label-offset = 0.2em
+}
+\usepackage[pdfpagelabels=false]{hyperref}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+%shared style for environments
+\tcbset{
+  thmstyle/.style={
+    enhanced,
+    frame hidden,
+    sharp corners,
+    boxrule = 0pt,
+    left = 8pt, right = 6pt, top = 4pt, bottom = 4pt,
+    fonttitle = \bfseries
+  }
+}
+% definition environment
+\newtcolorbox[auto counter, number within=section]{definition}[1][]{
+  thmstyle,
+  colback = blue!5,
+  borderline west = {2pt}{0pt}{blue!70!black},
+  coltitle = blue!70!black,
+  title = Definition \thetcbcounter,
+  #1
+}
+% theorem environment
+\newtcolorbox[auto counter, number within=section]{theorem}[1][]{
+  thmstyle,
+  colback = green!5,
+  borderline west = {2pt}{0pt}{green!50!black},
+  coltitle = green!50!black,
+  title = Theorem \thetcbcounter,
+  #1
+}
+% lemma environment
+\newtcolorbox[use counter from=theorem]{lemma}[1][]{
+  thmstyle,
+  colback = green!5,
+  borderline west = {2pt}{0pt}{green!50!black},
+  coltitle = green!50!black,
+  title = Lemma \thetcbcounter,
+  #1
+}
+% corollary environment
+\newtcolorbox[use counter from=theorem]{corollary}[1][]{
+  thmstyle,
+  colback = green!5,
+  borderline west = {2pt}{0pt}{green!50!black},
+  coltitle = green!50!black,
+  title = Corollary \thetcbcounter,
+  #1
+}
+% notation environment
+\newtcolorbox{notation}[1][]{
+  thmstyle,
+  colback = orange!5,
+  borderline west = {2pt}{0pt}{orange!50!black},
+  coltitle = orange!70!black,
+  title = Notation,
+  #1
+}
+% remark environment
+\newtcolorbox{remark}[1][]{
+  thmstyle,
+  colback = orange!5,
+  borderline west = {2pt}{0pt}{orange!50!black},
+  coltitle = orange!70!black,
+  title = Remark,
+  #1
+}
+% example environment
+\newtcolorbox{example}[1][]{
+  thmstyle,
+  colback = gray!5,
+  borderline west = {2pt}{0pt}{gray!50!black},
+  coltitle = black,
+  title = Example,
+  #1
+}
+\title{[lecture name] Notes}
+\author{Angus}
+\date{[date]}
+\begin{document}
+    \maketitle
+    \begin{abstract}
+        This is a simple abstract for the [lecture name] notes.
+    \end{abstract}
+\end{document}

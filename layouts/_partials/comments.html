@@ -9,9 +9,27 @@
           data-reactions-enabled="1"
           data-emit-metadata="0"
           data-input-position="bottom"
-          data-theme="preferred_color_scheme"
+          data-theme="light"
           data-lang="en"
           crossorigin="anonymous"
           async>
+  </script>
+  <script>
+    function syncGiscusTheme() {
+      const theme = document.documentElement.getAttribute('data-theme') || 'light';
+      const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: giscusTheme } } },
+        'https://giscus.app'
+      );
+    }
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://giscus.app') return;
+      if (typeof e.data === 'object' && e.data.giscus) syncGiscusTheme();
+    });
+    const observer = new MutationObserver(syncGiscusTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   </script>
 </div>

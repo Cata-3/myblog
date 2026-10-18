@@ -21,6 +21,10 @@ enableGitInfo = true
 [pagination]
   pagerSize = 10
 
+[pages]
+  sortBy = "lastmod"
+  sortOrder = "desc"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
@@ -65,21 +69,21 @@ enableGitInfo = true
   weight = 3
 
 [[menu.main]]
-  identifier = "archives"
-  name = "Archives"
-  url = "/archives/"
-  weight = 4
-
-[[menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 5
+  weight = 4
 
 [[menu.main]]
   identifier = "about"
   name = "About"
   url = "/about/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "discussion"
+  name = "Discussion"
+  url = "/discussion/"
   weight = 6
 
 [frontmatter]

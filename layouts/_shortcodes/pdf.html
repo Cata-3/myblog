@@ -1,7 +1,8 @@
 {{- $pdf := .Get 0 -}}
 {{- $pdfURL := printf "%s%s" .Page.RelPermalink $pdf -}}
+{{- $version := now.Unix -}}
 <iframe
-  src="{{ "pdfjs/web/viewer.html" | relURL }}?file={{ $pdfURL }}"
+  src="{{ "pdfjs/web/viewer.html" | relURL }}?file={{ $pdfURL }}&v={{ $version }}"
   width="100%"
   height="800px"
   style="border:1px solid #ccc;"></iframe>

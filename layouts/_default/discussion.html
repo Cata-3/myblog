@@ -1,0 +1,60 @@
+{{- define "main" }}
+
+<article class="discussion-page">
+
+  <header class="discussion-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Content }}
+    <div class="discussion-desc">
+      {{ .Content }}
+    </div>
+    {{- end }}
+  </header>
+
+  <div class="discussion-wrapper">
+    <script src="https://giscus.app/client.js"
+            data-repo="Cata-3/myblog"
+            data-repo-id="R_kgDOUnYW2g"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOUnYW2s4DISCt"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="0"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <script>
+      function syncGiscusTheme() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme } } },
+          'https://giscus.app'
+        );
+      }
+      window.addEventListener('message', function (e) {
+        if (e.origin !== 'https://giscus.app') return;
+        if (typeof e.data === 'object' && e.data.giscus) syncGiscusTheme();
+      });
+      const observer = new MutationObserver(syncGiscusTheme);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
+  </div>
+
+</article>
+
+<style>
+.discussion-page { max-width: 800px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.discussion-header { text-align: center; margin-bottom: 2rem; }
+.discussion-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.discussion-desc { color: var(--secondary); font-size: 1.05rem; }
+.discussion-wrapper { margin-top: 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+</style>
+
+{{- end }}
