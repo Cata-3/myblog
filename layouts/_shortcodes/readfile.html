@@ -1,0 +1,6 @@
+{{- $file := .Get 0 -}}
+{{- with .Page.Resources.GetMatch $file -}}
+  {{ (highlight .Content "latex" "") | safeHTML }}
+{{- else -}}
+  <p style="color: red;">File not found: {{ $file }}. Make sure it is in the same folder as index.md.</p>
+{{- end -}}

@@ -20,8 +20,9 @@
   max-width: 640px;
   margin: 0 auto;
   padding: 2rem 1rem 4rem;
-  font-family: "Iowan Old Style", Georgia, "Songti SC", "STSong", "STFangsong", serif;
-  font-size: 16px;
+  font-family: "Iowan Old Style", Charter, "Latin Modern Roman", Georgia,
+               "STFangsong", "FangSong", "华文仿宋", "仿宋", serif;
+  font-size: 15px;
   line-height: 1.6;
 }
 .about-header {
@@ -31,8 +32,8 @@
   margin-bottom: 2rem;
 }
 .about-avatar {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -40,31 +41,52 @@
 .about-intro { flex: 1; min-width: 0; }
 .about-name {
   margin: 0 0 0.2rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.2;
 }
 .about-tagline {
   color: var(--secondary);
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 .about-content h2 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin-top: 1.5rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   font-weight: 600;
 }
 .about-content p {
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
 }
-.about-content a,
-.about-content a:visited {
-  color: #0366d6 !important;
-  text-decoration: underline !important;
+.about-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+/* 链接样式：去掉下划线，悬停只变透明度 */
+.about-content a {
+  color: var(--primary) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
 }
 .about-content a:hover {
-  color: #024a9e !important;
+  color: var(--primary) !important;
+  opacity: 0.6;
 }
+
+/* 调小代码块字号 */
+.about-content .highlight {
+  margin: 1rem 0;
+}
+.about-content pre {
+  font-size: 0.8rem !important;
+  line-height: 1.4 !important;
+}
+.about-content code {
+  font-size: 0.85rem !important;
+}
+
 @media (max-width: 600px) {
   .about-header {
     flex-direction: column;
