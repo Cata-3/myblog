@@ -1,3 +1,28 @@
 {{- if and .IsPage (.Param "ShowViews") }}
-<span id="vercount_value_page_uv"></span> views
+{{- $path := .RelPermalink | strings.TrimSuffix "/" }}
+<span id="goatcounter-views" class="meta-item" title="Page views">👁️ loading...</span>
+<script>
+  (function() {
+    var el = document.getElementById('goatcounter-views');
+    if (!el) return;
+    
+    // 拼接 GoatCounter API 地址
+    var url = 'https://cata3.goatcounter.com/counter' + '{{ $path }}' + '.json';
+    
+    fetch(url)
+      .then(function(res) { 
+        if (!res.ok) throw new Error('Network error');
+        return res.json(); 
+      })
+      .then(function(data) {
+        // 优先展示 UV (count_unique)，如果没有则展示 PV (count)
+        var count = data.count_unique || data.count || 0;
+        el.innerText = '👁️ ' + count + ' views';
+      })
+      .catch(function(err) {
+        console.error('GoatCounter fetch error:', err);
+        el.innerText = '👁️ 0 views';
+      });
+  })();
+</script>
 {{- end }}

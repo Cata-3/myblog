@@ -1,0 +1,9 @@
+{{- define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+{{- $pages := .Pages.ByLastmod.Reverse }}
+{{- range $pages }}
+  {{- partial "post_entry.html" . }}
+{{- end }}
+{{- end }}
