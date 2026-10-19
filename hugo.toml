@@ -21,9 +21,6 @@ enableGitInfo = true
 [pagination]
   pagerSize = 10
 
-[pages]
-  sortBy = "lastmod"
-  sortOrder = "desc"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

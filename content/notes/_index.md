@@ -1,5 +1,6 @@
-+++
-title = "Notes"
-draft = false
-+++
+---
+title: "Notes"
+sortBy: "lastmod"
+sortOrder: "desc"
+---
 My lecture notes.
