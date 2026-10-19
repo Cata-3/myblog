@@ -1,32 +1,22 @@
-.post-history {
-    margin-top: 2rem;
-    padding: 1rem;
-    border: 1px solid var(--border);
+/* Force a high-contrast dark background for code blocks in all themes */
+.highlight,
+pre {
+    background-color: #282c34 !important;
     border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 1rem;
 }
 
-.post-history summary {
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--primary);
+/* Inline code blocks follow the theme's background */
+code {
+    background-color: var(--code-bg) !important;
+    color: var(--primary) !important;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
 }
 
-.post-history-list {
-    margin: 0.5rem 0 0 0;
-    padding-left: 1.2rem;
-}
-
-.post-history-list li {
-    margin-bottom: 0.3rem;
-    line-height: 1.5;
-}
-
-.post-history-subject {
-    margin-left: 0.5rem;
-}
-
-.post-history a {
-    color: var(--secondary);
-    font-size: 0.8rem;
+/* Reset the background and padding inside pre tags to prevent double styling */
+pre code {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
 }
