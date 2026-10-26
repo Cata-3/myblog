@@ -16,8 +16,6 @@ draft: false
 在这里，你将扮演一名绝望的数学系大学生，学习对于任意delta属于R，都存在epsilon属于R使得任意集合中元素x和epsilon的距离小于delta。  
 太棒了我逐渐理解一切，所以为什么还要我证明，好吧我认命了我证还不行吗。  
 不行因为我的多邻国要到下一天了，我不要熬夜对吧，  
-u should bet on me, like i'm apple in the 90s  
-时间像尿一样溜走了，待办任务像屎一样堆了起来。  
 晚安。  
 二编：好困啊给我困睡着了。  
-ok啊， push.
+ok啊
