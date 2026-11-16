@@ -2,7 +2,7 @@
 title = "Linear Algebra 2 Notes"
 draft = false
 date = 2026-10-01
-updated = "2026-11-14T22:01:03"
+updated = "2026-11-16T16:17:13"
 +++
 
 Linear Algebra 2 note.
